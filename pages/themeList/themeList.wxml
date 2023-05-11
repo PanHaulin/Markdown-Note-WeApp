@@ -1,0 +1,57 @@
+
+<view class="page" >
+
+  <!--移除的模态窗口-->
+  <view class="mask" catchtap="preventTap" wx:if="{{showModal}}"></view>
+  <view class="modalDlg" wx:if="{{showModal}}">
+  <button style="color:red;width:550;height:50;padding-bottom:5rpx" catchtap='del'>移除</button>
+  </view>
+
+  <!--按钮动画-->
+  <image src="/images/icons/more.png" animation="{{animationMore}}" class="More-style" catchtap="More"></image>
+  <image src="/images/icons/new.png" animation="{{animationNew}}" class="afterMore-style" catchtap="New"></image>
+  <image src="/images/icons/delete.png" animation="{{animationDelete}}" class="afterMore-style" catchtap="Batching"></image>
+
+  <view animation='{{slideslip}}'>  <!--下拉动画-->
+  <checkbox-group bindchange="checkboxChange">  <!--复选框-->
+  <view class="miniTheme"  wx:for="{{themeList}}" wx:key="{{item.themeId}}">
+    <!--主题内容-->
+    <view class="left">
+      <view catchtap='navigate' data-theme-id='{{item.themeId}}' data-theme-num='{{themeNum}}'>
+        <view class="top">
+          <textarea class ="themeName" placeholder='未定主题' value='{{item.name}}' disabled='true'></textarea>
+          <text class="time" wx:if="{{(loadTime-item.editTime)>=24*60*60*1000}}">{{((loadTime-item.editTime)-(loadTime-item.editTime)%(24*60*60*1000))
+          /(24*60*60*1000)}}天前</text>
+          <text class="time" wx:if="{{(loadTime-item.editTime)<24*60*60*1000}}">今天</text>
+          <text class='time'>{{item.dateStr}}</text>
+        </view>
+        <view class="down">
+         <textarea class ="themeDes" placeholder='添加描述' value='{{item.describe}}' disabled='true'></textarea>
+        </view>
+      </view>
+    </view>
+    <!--主题内容-->
+
+    <!--移除操作-->
+    <view class="right" bindtap='action' data-current-theme='{{item.themeId}}' wx:if='{{!isBatching}}' >
+      <image class='more' mode='aspectFit' src="/images/icons/dot.png" ></image>
+    </view>
+
+    <!--复选框-->
+    <view class="right" wx:if='{{isBatching}}'>
+    <checkbox value='{{item.themeId}}'></checkbox>
+    </view>
+
+  </view>
+  </checkbox-group>
+  </view>
+
+</view>
+<!--批量删除确认界面-->
+  <view class='sure' wx:if='{{isBatching}}'>
+    <text style='font-size:30rpx;padding-bottom:10rpx'>确定要删除选中的主题吗？</text>
+    <view class='sureButton'>
+      <view style='padding-right:50rpx'><button size='mini' type='warn' catchtap='delAll'>确定删除</button></view>
+      <view><button size='mini' style='color:green' catchtap='cancelAll'>取消</button></view>
+    </view>
+  </view>

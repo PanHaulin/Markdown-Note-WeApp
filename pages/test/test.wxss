@@ -1,0 +1,115 @@
+.container{
+  width: 100%;
+  position: fixed;
+  height: 100%;
+}
+
+.top-area{
+  height: 90rpx;
+  width:100%;
+  background-color: #fff96d;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.top-buttom{
+  display: flex;
+  background-color: #fff96d;
+  flex-direction: column;
+  justify-content:flex-start;
+  width:80rpx;
+  height:90rpx;
+  border: 3rpx solid #fff96d;
+}
+
+.tButtom{
+  width:80rpx;
+  height:90rpx;
+  opacity: 0;
+  position: fixed;
+}
+
+.sign{
+  font-size: 30rpx;
+  font-weight: 700;
+  align-self: center;
+}
+
+.word{
+  font-size: 20rpx;
+  font-weight: 100;
+  align-self: center;
+}
+
+
+.top_tupian{
+  width: 50rpx;
+  height:50rpx;
+  align-self: center;
+}
+
+.middle-area{
+   width: 100%;
+   border-bottom-style: groove;
+   font-size: 16px;
+}
+
+.contain_sign{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.end-area{
+  display: flex;
+  flex-direction: row;
+  height:90rpx;
+}
+.eButton{
+  padding: 0px;
+  margin: 0px;
+  width: 375rpx;
+  border-style: none;
+  background-color: #fff96d;
+}
+.end-buttom{
+   display: flex;
+  background-color: #fff96d;
+  height: 90rpx;
+  width: 375rpx;
+}
+
+.end_tupian{
+  width: 80rpx;
+  height: 80rpx;
+  align-self: center;
+}
+.maskLayer{
+  height: 100%;
+  z-index: 100;
+  position:fixed; 
+  width:100%;
+  top:0px;
+  background:rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.menu{
+  position: absolute;
+  bottom: 0%;
+  background-color: #ffffff;
+  width: 100%;
+  height: 270rpx;
+  z-index: 101;
+}
+.menuName{
+  font-size: 50rpx;
+  border-bottom-color: #d3d3d3;
+  border-bottom-style: solid;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.menuitem{
+  font-size: 50rpx;
+  border-bottom-style: solid;
+  align-self: left;
+}

@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/themeList/themeList",
+    "pages/theme/theme",
+    "pages/about/about",
+    "pages/edit/edit",
+    "pages/show/show"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "text": "主题列表",
+        "pagePath": "pages/themeList/themeList",
+        "iconPath": "images/icons/list.png",
+        "selectedIconPath": "images/icons/list_color.png"
+      },
+      {
+        "text": "关于",
+        "pagePath": "pages/about/about",
+        "iconPath": "images/icons/about.png",
+        "selectedIconPath": "images/icons/about_color.png"
+      }
+    ]
+  }
+}

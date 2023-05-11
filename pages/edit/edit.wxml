@@ -1,0 +1,102 @@
+<view class='container'>
+ 
+ <!--顶部栏-->
+ <view class="top-area" >
+
+   <!--<scroll-view scroll-x >-->
+    <view class='contain_sign'>
+      <view class="top-buttom">
+      <text class="sign">#</text>
+      <text class="word">标题</text>
+     <button class="tButtom"   bindtap='addTitle'></button>
+     </view>
+
+     <view class="top-buttom">
+      <text class="sign">*</text>
+      <text class="word">加粗</text>
+      <button class="tButtom" bindtap='addBold'></button>
+     </view>
+
+     <view class="top-buttom">
+     <text class="sign">-</text>
+     <text class="word"> 列表</text>
+     <button class="tButtom" bindtap='addList'></button>
+     </view>
+
+     <view class="top-buttom">
+     <text class="sign">></text>
+     <text class="word">引用</text>
+     <button class="tButtom" bindtap='addReference'></button>
+     </view>
+
+    <view class="top-buttom">
+     <text class="sign">`</text>
+    <text class="word">代码</text>
+    <button class="tButtom" bindtap='addCode'></button>
+   </view>
+
+   <view class="top-buttom">
+    <text class="sign">|</text>
+    <text class="word">表格</text>
+    <button class="tButtom" bindtap='addTable'></button>
+   </view>
+
+   <view class="top-buttom">
+   <text class="sign">\</text>
+   <text class="word">反斜杠</text>
+   <button class="tButtom" bindtap='addFan'></button>
+   </view>
+
+
+   <view class="top-buttom">
+       <image class="top_tupian" src="/images/icons/tupian.png"></image>
+       <text class="word">图片</text>
+       <button class="tButtom" bindtap='addImage'></button>
+   </view>
+
+   <view class="top-buttom">
+       <image class="top_tupian" src="/images/icons/link.png"></image>
+       <text class="word">链接</text>
+       <button class="tButtom" bindtap='addLink'></button>
+   </view>
+  
+  </view>
+  <!--</scroll-view>-->
+</view>
+<!--文本编辑区域-->
+  <view class='middle-area' style='height:{{textHeight}}px'>
+  <textarea class='middle-area' style='height:{{textHeight}}px'
+   maxlength='-1'  show-confirm-bar='' placeholder='可以开始markdown你想记录的东西啦~' 
+       placeholder-style='font-size:16px ; color:darkgray' 
+    bindinput='bindTextArea' value='{{theme.block[blockId-1].text}}' cursor-spacing='45' />
+  </view>
+<!--底部菜单区域-->
+  <view class='end-area'>
+     <view class='end-buttom'>
+     <button class='eButton' bindtap='bindShare'>
+     <image class='end_tupian'src='/images/icons/share.png'></image></button>
+     </view>
+ 
+     <view class='end-buttom'>
+     <button class='eButton' bindtap='bindShow'> 
+     <image class='end_tupian' src='/images/icons/show.png'></image></button>
+     </view>
+
+    <view class='end-buttom'>
+     <button class='eButton' bindtap='bindDelete'> 
+     <image class='end_tupian' src='/images/icons/delete-2.png'></image></button>
+     </view>
+    </view>
+
+<!--隐藏区域-->
+  <view class='maskLayer' wx:if="{{showFlag}}" bindtap='hideModal'></view>
+  <view class='menu' wx:if="{{showFlag}}"  animation='{{animationData}}'>
+    <view class='menuName'> <text>分享你的markdown</text>
+    </view>
+    <button bindtap='shareInWord' > <text class='menuItem' >以文本形式分享</text>
+    </button>
+    <button  open-type='share'><text class='menuItem' style='border-bottom-style: none' >以渲染方式分享</text>
+    </button>
+  </view>
+</view>
+

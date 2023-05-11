@@ -1,0 +1,39 @@
+<view class="page">
+  <view style='margin-right:50rpx;display: flex;flex-direction:row'>
+  <textarea class="theme" placeholder='未定主题..' value="{{theme.name}}" maxlength='14' bindinput='input' bindblur='editTheme'></textarea>
+  </view>
+
+  <view class="detail">
+  <text class="read">{{theme.readTime}}次阅读</text>
+  <text>{{theme.shareTime}}次分享</text>
+  </view>
+
+ <view style='display:flex; flex-direction:row' class="desc">
+    <textarea  placeholder='输入一些关于该主题的描述..' value="{{theme.describe}}" maxlength='25'  bindinput='inputDesc'></textarea>
+    <text style='color:darkgray'>{{restDesc}}</text>
+  </view>
+
+  <swiper class="richText" indicator-dots='true' current='0' bindchange='onSlideChange' style='height:{{textHeight}}px' >
+    <swiper-item wx:for='{{theme.block}}' wx:key='{{item.blockId}}' >
+    <view class="pick">
+    <textarea disabled='true' wx:if="{{item.text}}" style='font-size: 40rpx'>{{item.text}}</textarea>
+    <textarea wx:else="{{item.text}} " class='showNone'>点击下方按钮开始编辑~</textarea>
+    </view>
+
+    </swiper-item>
+
+  </swiper>
+
+  <view>
+    <view class="maskAdd" wx:if="{{showMaskAdd}}"></view>
+    <image src='/images/icons/add.png' class='btAdd' catchtouchstart='touchAdd' catchtouchend='afterAdd'></image>
+  </view>
+  <view>
+    <view class="maskEdit" wx:if="{{showMaskEdit}}"></view>
+    <image src='/images/icons/edit.png' class='btEdit' catchtouchstart='touchEdit' catchtouchend='afterEdit'></image>
+  </view>
+ 
+
+  <button class='share' catchtap='share' open-type='share'>分享</button>
+
+</view>

@@ -1,0 +1,70 @@
+<view class="page">
+    <view class="page-bottom">
+        <view class="page-content">
+        <!--侧边栏-->
+            <view  class="{{selected==0?'wc_selected':'wc_normal'}}" catchtap='about0'>
+                <text>关于小程序</text>
+            </view>
+            <view  class="{{selected==1?'wc_selected':'wc_normal'}}" catchtap='about1'>  
+                <text>MarkDwon介绍</text>
+            </view>
+            <view  class="{{selected==2?'wc_selected':'wc_normal'}}" catchtap='about2'>
+                <text>语法课堂（1）</text>
+            </view>
+            <view  class="{{selected==3?'wc_selected':'wc_normal'}}" catchtap='about3'>
+                <text>语法课堂（2）</text>
+            </view>
+        </view>
+    </view>
+    
+      <view class="page-top" animation="{{slideslip}}">
+          <!--更多图标-->
+          <image bindtap="tap" bindtouchstart='start' bindtouchmove='drag'
+          bindtouchend='end' src="/images/icons/btn.png" 
+          style='width:50rpx;height:30rpx;margin-left:30rpx;margin-top:30rpx'
+          mode='aspectFit'>
+          </image>
+
+          <!--每一页内容，条件渲染-->
+          <view class='content' wx:if="{{selected==0}}" style='height:{{textHeight}}px'>
+          <text class='t'>关于小程序</text>
+          <text class='t'>①这个小程序开发的灵感来源于我们发现移动端的记录用途app如笔记，便签</text>
+          <text class='t'>②笔记app适用面广，功能强大，但是通常体量比较大</text>
+          <text class='t'>③便签类app体量小，易用性强，但格式往往让人头大</text>
+          <text class='t'>④我们团队想要通过MarkDwon语法的优势，结合小程序即开即用，体量小的特点，开发出一款便携易分享扩散，并且文本可读性强的便签类小程序</text>
+          
+          <text  style='font-size: 30rpx; margin-top:100rpx;color:grey'>MarkDwon介绍及语法教学转自为知笔记，侵删</text>
+          <text style=' padding-top:30rpx; font-size:30rpx; color:grey; text-align: center'>如果你有什么建议或者发现了一些bug 欢迎联系我们wxh_newStar@foxmail.com</text>
+          </view>
+
+          <view class='content' wx:if="{{selected==1}}" style='height:{{textHeight}}px'>
+          <text class='t'>MarkDwon介绍</text>
+          <!--多图滚动-->
+          <scroll-view scroll-y='true' style='height:{{scrollHeight}}px'>
+          <image src='/images/about/introduce.jpg' class='images' style='width:750rpx' mode='widthFix' ></image>
+          </scroll-view>
+          </view>
+
+          <view class='content' wx:if="{{selected==2}}"style='height:{{textHeight}}px'>
+          <text class='t'>语法课堂（1）</text>
+          <scroll-view scroll-y='true' style='height:{{scrollHeight}}px'>
+          <image src='/images/about/1st.jpg' class='images'style='width:750rpx' mode='widthFix'></image>
+          </scroll-view>
+          </view>
+
+          <view class='content' wx:if="{{selected==3}}" style='height:{{textHeight}}px'>
+          <text class='t'>语法课堂（2）</text>
+          <scroll-view scroll-y='true' style='height:{{scrollHeight}}px'>
+          <image src='/images/about/2nd.jpg'class='images' style='width:750rpx' mode='widthFix'></image>
+          </scroll-view>
+          </view>
+  
+       <view class='btContainer'> 
+          <button class='bt-l' catchtap='up' wx:if="{{selected>0}}">上一页</button>
+           <button class='bt-r' catchtap='next' wx:if="{{selected<=2}}">下一页</button>
+       </view>
+          
+      </view>
+    
+</view>
+

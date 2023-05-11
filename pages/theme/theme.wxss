@@ -1,0 +1,124 @@
+.page{
+  padding-left: 50rpx;
+  padding-top: 30rpx;
+  padding-right: 50rpx;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+}
+
+.theme{
+  font-weight:bolder;
+  font-size: 40rpx;
+  height: 1.5em;
+  width:14em;
+  
+}
+
+.num{
+  font-size: 25rpx;
+  color: darkgray;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.detail{
+  font-size: 30rpx;
+  color:green;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.read{
+  margin-right: 20rpx;
+}
+
+.richText{
+  height: 58vh;
+  border-style: solid;
+  border-width: 5rpx;
+  border-left-width: 0;
+  border-right-width: 0;
+
+}
+
+.pick{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.other{
+  display: flex;
+  flex-direction: column;
+}
+
+.new{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+
+}
+
+.maskAdd{
+  width:100rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 30rpx;
+  left: 225rpx;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.2;
+}
+
+.btAdd{
+  width: 100rpx;
+  height: 100rpx;
+  position:absolute;
+  bottom: 30rpx;
+  left: 225rpx;
+  z-index: 8000;
+}
+
+.maskEdit{
+  width:100rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 30rpx;
+  left: 425rpx;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.2;
+}
+
+.btEdit{
+  width: 100rpx;
+  height: 100rpx;
+  position:absolute;
+  bottom: 30rpx;
+  left: 425rpx;
+  z-index: 8000;
+}
+
+.desc{
+  margin-top: 0rpx;
+  font-size: 25rpx;
+  color: orange;
+  height: 40rpx;
+}
+
+.share{
+  font-size: 25rpx;
+  color: forestgreen;
+  position:absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.showNone{
+   font-size: 38rpx;
+   color: darkgray;
+}

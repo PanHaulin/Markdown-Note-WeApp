@@ -1,0 +1,4 @@
+<import src="../wemark/wemark.wxml"/>
+<template is="wemark" data="{{...wemark}}"></template>
+
+
